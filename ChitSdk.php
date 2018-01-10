@@ -16,7 +16,7 @@ use Exception;
  */
 class ChitSdk
 {
-    protected $url = 'http://api2.santo.cc/submit';
+    protected $url = 'http://api2.santo.cc/submit?';
     # API　key
     protected $key = '0tohwv';
     # API　secret
@@ -39,7 +39,7 @@ class ChitSdk
         # 获取url采纳数
         $params = $this->getParams($phone, $sm);
         # 获取完整url
-        $url = $this->url . $this->getUrlParam($params);
+        $url = $this->getUrlParam($params);
         # 发送请求
         try {
             return file_get_contents($url);
@@ -87,12 +87,7 @@ class ChitSdk
      */
     protected function getUrlParam(Array $arr)
     {
-        $array = [];
-        # 拼接url 参数
-        foreach ($arr as $key => $value) {
-            $array[] = $key . '=' . $value;
-        }
-        $param = '?';
-        return $param .= implode($array, '&');
+        return $this->url.http_build_query ($arr);
+
     }
 }
