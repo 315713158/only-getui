@@ -1,0 +1,1 @@
+$api->{{actionMethod}}('/{{prefix}}/{{method}}', '{{class}}@{{method}}')->name('{{title}}'){{ext}};
