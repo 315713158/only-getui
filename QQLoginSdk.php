@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: 亿捷网络
- * Date: 2018/1/10
- * Time: 15:03
- */
-
 
 /**
  * 接口
